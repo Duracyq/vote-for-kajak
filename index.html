@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #expandableDiv {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+
+        #expandableDiv.expanded {
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,7 +87,7 @@
                     <div class="carousel-item">
                         <div class="card bg-gray-300 p-6 shadow-md rounded-lg mr-6 text-center">
                             <h1 class="font-bold text-2xl pb-2">Wsparcie dla cheerlederek i ambitnych przedsięwzięć uczniów</h1>
-                            Consectetur adipiscing elit
+                            <p>Staramy się wspierać nasze cheerleaderki i inicjatywy naszych uczniów. Dostarczamy im niezbędnego wsparcia, aby mogli osiągać sukcesy i rozwijać swoje pasje.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -139,20 +150,44 @@
             <h2 class="text-left text-2xl font-bold m-0 text-white">Kontakt</h2>
         </div>
         <section class="container mt-8">
-            <p>Jeśli masz pytania lub chcesz dowiedzieć się więcej, skontaktuj się z nami:</p>
-            <ul>
-                <li>Email: kandydat@example.com</li>
-                <li>Telefon: 123-456-789</li>
-                <li>Adres: ul. Przykładowa 123, 00-000 Warszawa</li>
+            <p>Jeśli masz pytania lub chcesz dowiedzieć się więcej, napisz:</p>
+            <ul class="flex justify-center">
+                <li>
+                    <a href="https://www.instagram.com/__kajmak/" target="_blank" class="p-2 px-8">
+                        <img src="assets/instagram_logo.png" alt="Instagram" class="mx-auto w-14 h-14" style="filter: invert(1);">                    </a>
+                    </a>
+                </li>
+                <li>
+                    <li>
+                        <a href="mailto:szymonkajak542@gmail.com" target="_blank" class="p-2 px-8">
+                            <img src="assets/email-logo.png" alt="Email" class="mx-auto w-14 h-14" style="filter: invert(0);">
+                        </a>
+                    </li>
+                </li>
             </ul>
         </section>
         <footer class="p-6 pb-0 mt-12 flex justify-center items-center">
             <div class="flex-col items-center justify-center bg-red-500 pb-32 p-6 rounded-t">
                 <p class="text-center text-white font-bold text-2xl">Stwórzmy lepszą szkołę - RAZEM!</p>
                 <p class="text-center text-white font-bold text-sm">Oddaj swój głos już dziś!</p>
+                <button id="expandButton" class="text-sm items-center bg-red-450 w-20" style="color: rgba(71, 0, 0, 0.034);">icons</button>
+                <div id="expandableDiv" class="text-xs text-white">
+                    <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/w/index.php?curid=115425122">Instagram logo</a>" by <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/w/index.php?title=User:Pigeon43&action=edit&redlink=1">Pigeon43</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse">CC BY-SA 4.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p> 
+                    <a target="_blank" href="https://icons8.com/icon/85500/email">Email</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                </div>
             </div>
         </footer>
     </main>
+    <script>
+        document.getElementById('expandButton').addEventListener('click', function() {
+            var div = document.getElementById('expandableDiv');
+            if (div.classList.contains('expanded')) {
+                div.classList.remove('expanded');
+            } else {
+                div.classList.add('expanded');
+            }
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script></body>
 
